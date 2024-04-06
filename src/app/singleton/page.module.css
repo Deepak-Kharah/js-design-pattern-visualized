@@ -1,0 +1,7 @@
+.signal-instance > button {
+  opacity: 0;
+}
+
+.signal-instance:hover > button {
+  opacity: 1;
+}

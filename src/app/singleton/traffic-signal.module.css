@@ -1,0 +1,11 @@
+.traffic-signal.current-signal-red button.red {
+  background-color: #e12727;
+}
+
+.traffic-signal.current-signal-yellow button.yellow {
+  background-color: #f9eb68;
+}
+
+.traffic-signal.current-signal-green button.green {
+  background-color: #54efbe;
+}
