@@ -5,3 +5,9 @@
 .signal-instance:hover > button {
   opacity: 1;
 }
+
+@media (hover: none) {
+  .signal-instance > button {
+    opacity: 1;
+  }
+}

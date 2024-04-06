@@ -8,9 +8,35 @@ import classNames from "classnames";
 
 function Singleton() {
   return (
-    <main className=" text-center text-white">
-      <h1 className="text-3xl py-5">Singleton Pattern</h1>
-
+    <>
+      <section>
+        <h1 className="text-5xl py-5 px-5 leading-snug">Singleton Pattern</h1>
+        <div className="max-w-xl px-5 text-justify mx-auto font-light text-slate-400">
+          <p>
+            The{" "}
+            <strong className="font-medium text-slate-300">
+              Singleton Pattern
+            </strong>{" "}
+            is a design pattern that ensures a class has only one instance and
+            provides a global point of access to that instance. This pattern is
+            particularly useful when you want to limit a class`&rsquo;`s
+            instantiation to a single object, which is commonly used in
+            scenarios such as managing resources, configuration settings,
+            logging, caching, and more.
+          </p>
+          <br />
+          <p>
+            In this example, we have Normal traffic lights and Singleton traffic
+            lights. You can toggle the normal traffic lights separately, whereas
+            the Singleton traffic lights will switch lights for all instances.
+          </p>
+          <br />
+          <p>
+            Try adding and deleting new instances and toggling lights to see
+            what happens.
+          </p>
+        </div>
+      </section>
       <div className="divide-y divide-gray-600">
         <TrafficSignalModule
           getInstance={NormalTrafficSignal.getInstance}
@@ -21,7 +47,7 @@ function Singleton() {
           title="Singleton Traffic Signal"
         />
       </div>
-    </main>
+    </>
   );
 }
 
@@ -33,11 +59,21 @@ interface TestProps<T extends NormalTrafficSignal | SingletonTrafficSignal> {
 function TrafficSignalModule<
   T extends NormalTrafficSignal | SingletonTrafficSignal
 >({ getInstance, title }: TestProps<T>) {
-  const [trafficSignals, setTrafficSignals] = useState<T[]>([getInstance()]);
+  const [trafficSignals, setTrafficSignals] = useState<T[]>([
+    getInstance(),
+    getInstance(),
+    getInstance(),
+  ]);
 
   function addNewTrafficSignal() {
-    const newTrafficSignal = getInstance();
-    setTrafficSignals([...trafficSignals, newTrafficSignal]);
+    setTrafficSignals((prevState) => {
+      if (prevState.length < 5) {
+        const newTrafficSignal = getInstance();
+        return [...prevState, newTrafficSignal];
+      }
+
+      return prevState;
+    });
   }
 
   function deleteTrafficSignal(index: number) {
@@ -46,10 +82,14 @@ function TrafficSignalModule<
     setTrafficSignals(newTrafficSignals);
   }
 
+  function resetTrafficSignals() {
+    setTrafficSignals([getInstance(), getInstance(), getInstance()]);
+  }
+
   return (
-    <div className=" flex flex-col gap-6 items-center py-5 bg-gray-800">
+    <section className=" flex flex-col gap-6 items-center py-5 bg-gray-800">
       <h2 className="text-xl">{title}</h2>
-      <div className="flex gap-3">
+      <div className="flex gap-3 h-48 items-center">
         {trafficSignals.map((trafficSignal, index) => {
           return (
             <div
@@ -74,13 +114,23 @@ function TrafficSignalModule<
           <p className="text-gray-500">You&apos;ve deleted all the instances</p>
         )}
       </div>
-      <button
-        className="border-gray-700 border-2 text-gray-300 py-1 px-2 rounded-md hover:bg-white hover:text-black transition-colors"
-        onClick={addNewTrafficSignal}
-      >
-        Add new instance
-      </button>
-    </div>
+      <div className="inline-flex rounded-md shadow-sm" role="group">
+        <button
+          disabled={trafficSignals.length >= 5}
+          className="px-4 py-2 text-sm font-light border  rounded-s-lg  focus:z-10 focus:ring-2  bg-gray-800 border-gray-700 text-slate-300 hover:text-white hover:bg-gray-700 focus:ring-blue-500 focus:text-white disabled:text-gray-700 disabled:cursor-not-allowed disabled:hover:bg-gray-800 disabled:hover:text-gray-700 "
+          onClick={addNewTrafficSignal}
+        >
+          Add new instance
+        </button>
+
+        <button
+          className="px-4 py-2 text-sm font-light border  rounded-e-lg focus:z-10 focus:ring-2  bg-gray-800 border-gray-700 text-slate-300 hover:text-white hover:bg-gray-700 focus:ring-blue-500 focus:text-white"
+          onClick={resetTrafficSignals}
+        >
+          Reset
+        </button>
+      </div>
+    </section>
   );
 }
 
