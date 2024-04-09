@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
@@ -6,9 +6,46 @@ import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  themeColor: "#0f172a",
+  colorScheme: "dark light",
+};
+
 export const metadata: Metadata = {
   title: "JS Design pattern visualized",
   description: "Visualize design patterns in JavaScript",
+  applicationName: "JS Design pattern visualized",
+  authors: [
+    {
+      name: "Deepak Kharah",
+      url: "https://github.com/Deepak-Kharah",
+    },
+  ],
+  icons: {
+    other: [
+      { rel: "manifest", url: "/site.webmanifest" },
+      {
+        rel: "mask-icon",
+        url: "images/safari-pinned-tab.svg",
+        color: "#5bbad5",
+      },
+    ],
+    apple: "/images/apple-touch-icon.png",
+    icon: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/images/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        url: "/images/favicon-16x16.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -18,6 +55,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#373943" />
+      </head> */}
       <body
         className={classNames(
           inter.className,
@@ -25,7 +84,7 @@ export default function RootLayout({
           "text-white flex flex-col min-h-[100vh]"
         )}
       >
-        <nav className="font-extralight text-slate-400 py-2 px-3">
+        <nav className="font-extralight text-slate-400 py-4 px-3 bg-gradient-to-b from-slate-700/40 to-transparent">
           <ul className="flex gap-5 mx-auto justify-center">
             <li>
               <Link className="transition-all hover:text-white" href="/">
@@ -39,10 +98,8 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
-        <main className="flex flex-col gap-10 text-center flex-1">
-          {children}
-        </main>
-        <footer className="font-extralight text-slate-400 py-2 px-3 text-center">
+        <main>{children}</main>
+        <footer className="font-extralight text-sm text-slate-400 py-4 px-3 text-center bg-gradient-to-t from-slate-700/40 to-transparent">
           Build by{" "}
           <a
             className="transition-all hover:text-white"

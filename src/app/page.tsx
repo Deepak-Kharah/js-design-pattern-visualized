@@ -8,42 +8,6 @@ const designPatterns = [
       "Ensure a class has only one instance and provide a global point of access to it.",
     link: "/singleton",
   },
-  {
-    name: "Factory",
-    description:
-      "Define an interface for creating an object, but let subclasses alter the type of objects that will be created.",
-    link: "/factory",
-  },
-  {
-    name: "Factory",
-    description:
-      "Define an interface for creating an object, but let subclasses alter the type of objects that will be created.",
-    link: "/factory",
-  },
-  {
-    name: "Factory",
-    description:
-      "Define an interface for creating an object, but let subclasses alter the type of objects that will be created.Define an interface for creating an object, but let subclasses alter the type of objects that will be created.Define an interface for creating an object, but let subclasses alter the type of objects that will be created.Define an interface for creating an object, but let subclasses alter the type of objects that will be created.",
-    link: "/factory",
-  },
-  {
-    name: "Factory",
-    description:
-      "Define an interface for creating an object, but let subclasses alter the type of objects that will be created.",
-    link: "/factory",
-  },
-  {
-    name: "Factory",
-    description:
-      "Define an interface for creating an object, but let subclasses alter the type of objects that will be created.",
-    link: "/factory",
-  },
-  {
-    name: "Factory",
-    description:
-      "Define an interface for creating an object, but let subclasses alter the type of objects that will be created. Define an interface for creating an object, but let subclasses alter the type of objects that will be created.Define an interface for creating an object, but let subclasses alter the type of objects that will be created.",
-    link: "/factory",
-  },
 ];
 
 export default function Home() {

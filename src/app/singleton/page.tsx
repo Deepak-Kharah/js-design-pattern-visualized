@@ -1,25 +1,24 @@
 "use client";
-
-import React, { useState } from "react";
-import { NormalTrafficSignal, SingletonTrafficSignal } from "./implementation";
-import TrafficSignal from "./TrafficSignal";
-import style from "./page.module.css";
 import classNames from "classnames";
+import { useState } from "react";
+import TrafficSignal from "./TrafficSignal";
+import { NormalTrafficSignal, SingletonTrafficSignal } from "./implementation";
+import style from "./page.module.css";
 
 function Singleton() {
   return (
     <>
-      <section>
-        <h1 className="text-5xl py-5 px-5 leading-snug">Singleton Pattern</h1>
-        <div className="max-w-xl px-5 text-justify mx-auto font-light text-slate-400">
+      <section className="px-7 flex flex-col justify-center items-center gap-6 sm:gap-16 h-svh">
+        <h1 className="sm:text-5xl text-3xl">Singleton Pattern</h1>
+        <div className="max-w-4xl sm:text-lg opacity-50 font-light tracking-wide text-justify">
           <p>
             The{" "}
-            <strong className="font-medium text-slate-300">
+            <strong className="font-medium underline opacity-100">
               Singleton Pattern
             </strong>{" "}
             is a design pattern that ensures a class has only one instance and
             provides a global point of access to that instance. This pattern is
-            particularly useful when you want to limit a class`&rsquo;`s
+            particularly useful when you want to limit a class&rsquo;s
             instantiation to a single object, which is commonly used in
             scenarios such as managing resources, configuration settings,
             logging, caching, and more.
