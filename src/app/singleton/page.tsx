@@ -37,7 +37,7 @@ function Singleton() {
           </p>
         </div>
       </section>
-      <div className="divide-y divide-gray-600">
+      <div className="divide-y divide-indigo-800">
         <TrafficSignalModule
           getInstance={NormalTrafficSignal.getInstance}
           title="Normal Traffic Signal"
@@ -51,14 +51,16 @@ function Singleton() {
   );
 }
 
-interface TestProps<T extends NormalTrafficSignal | SingletonTrafficSignal> {
+interface TrafficSignalModuleProps<
+  T extends NormalTrafficSignal | SingletonTrafficSignal
+> {
   getInstance: () => T;
   title: string;
 }
 
 function TrafficSignalModule<
   T extends NormalTrafficSignal | SingletonTrafficSignal
->({ getInstance, title }: TestProps<T>) {
+>({ getInstance, title }: TrafficSignalModuleProps<T>) {
   const [trafficSignals, setTrafficSignals] = useState<T[]>([
     getInstance(),
     getInstance(),
@@ -87,7 +89,7 @@ function TrafficSignalModule<
   }
 
   return (
-    <section className=" flex flex-col gap-6 items-center py-5 bg-gray-800">
+    <section className=" flex flex-col gap-6 items-center py-5 bg-gradient-to-l from-indigo-950 to-blue-950 via-slate-950">
       <h2 className="text-xl">{title}</h2>
       <div className="flex gap-3 h-48 items-center">
         {trafficSignals.map((trafficSignal, index) => {
