@@ -13,8 +13,33 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "JS Design pattern visualized",
-  description: "Visualize design patterns in JavaScript",
+  description:
+    "Visualize practical implementation of design patterns in JavaScript",
   applicationName: "JS Design pattern visualized",
+  openGraph: {
+    type: "website",
+    url: "https://js-design-pattern-visualized.vercel.app",
+    siteName: "JS Design pattern visualized",
+    title: "JS Design pattern visualized",
+    images: [
+      {
+        url: "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
+        alt: "JS Design pattern visualized",
+      },
+    ],
+    description:
+      "Visualize practical implementation of design patterns in JavaScript",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JS Design pattern visualized",
+    description:
+      "Visualize practical implementation of design patterns in JavaScript",
+    creator: "@deepak_kharah",
+    images: [
+      "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
+    ],
+  },
   authors: [
     {
       name: "Deepak Kharah",
