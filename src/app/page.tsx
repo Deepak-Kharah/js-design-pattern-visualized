@@ -39,9 +39,9 @@ export default function Home() {
         }
       />
 
-      <section className="max-w-7xl mx-auto px-5 flex flex-col items-center py-16 gap-16">
+      <section className="flex flex-col items-center py-16 gap-16">
         <H2>Browse Design patterns</H2>
-        <ul className="flex flex-wrap gap-10 px-5 justify-center lg:mb-0 text-left">
+        <ul className="flex flex-wrap max-w-7xl mx-auto gap-10 px-5 justify-center lg:mb-0 text-left">
           {designPatterns.map((pattern) => (
             <li key={pattern.name}>
               <DesignPatternList
@@ -80,7 +80,7 @@ function DesignPatternList({
   return (
     <Link
       href={link}
-      className="group rounded-lg border border-transparent w-80 h-32 px-5 py-4 bg-slate-700/10 transition-all hover:border-blue-900 hover:bg-blue-800/20 block"
+      className="group rounded-lg border border-transparent w-80 h-32 px-5 py-4 bg-slate-700/30 transition-all hover:border-blue-900 hover:bg-blue-800/20 block"
     >
       <h3 className={`mb-3 text-2xl font-semibold`}>
         {title}{" "}

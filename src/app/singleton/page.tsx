@@ -91,8 +91,7 @@ function Singleton() {
                 Some practical applications of the Singleton Pattern include
                 building an SDK that requires initialization with some
                 configuration. Once the user initializes the SDK, all its
-                methods will have additional configuration from the
-                configuration.
+                methods will have additional context from the configuration.
               </p>
             </>
           }
@@ -114,7 +113,7 @@ function TrafficSignalSection<
   T extends NormalTrafficSignal | SingletonTrafficSignal
 >({ getInstance, title, explaination }: TrafficSignalSectionProps<T>) {
   return (
-    <section className="bg-gradient-to-l from-indigo-950 to-blue-950 via-slate-950">
+    <section className="bg-gradient-to-l from-indigo-950 to-blue-950 via-slate-900/20">
       <div className="max-w-7xl gap-10 sm:gap-16 flex flex-col items-center mx-auto px-7 py-16">
         <H2>{title}</H2>
 
