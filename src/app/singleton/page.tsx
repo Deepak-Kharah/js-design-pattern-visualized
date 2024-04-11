@@ -1,12 +1,13 @@
 "use client";
+import { H2 } from "@/components/Heading";
+import Paragraph from "@/components/Paragraph";
+import TitleSection from "@/components/TitleSection";
 import classNames from "classnames";
+import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import TrafficSignal from "./TrafficSignal";
 import { NormalTrafficSignal, SingletonTrafficSignal } from "./implementation";
 import style from "./page.module.css";
-import Paragraph from "@/components/Paragraph";
-import TitleSection from "@/components/TitleSection";
-import { H2 } from "@/components/Heading";
 
 function Singleton() {
   return (
@@ -91,8 +92,7 @@ function Singleton() {
                 Some practical applications of the Singleton Pattern include
                 building an SDK that requires initialization with some
                 configuration. Once the user initializes the SDK, all its
-                methods will have additional configuration from the
-                configuration.
+                methods will have additional context from the configuration.
               </p>
             </>
           }
@@ -114,7 +114,7 @@ function TrafficSignalSection<
   T extends NormalTrafficSignal | SingletonTrafficSignal
 >({ getInstance, title, explaination }: TrafficSignalSectionProps<T>) {
   return (
-    <section className="bg-gradient-to-l from-indigo-950 to-blue-950 via-slate-950">
+    <section className="bg-gradient-to-l from-indigo-950 to-blue-950 via-slate-900/20">
       <div className="max-w-7xl gap-10 sm:gap-16 flex flex-col items-center mx-auto px-7 py-16">
         <H2>{title}</H2>
 
@@ -169,25 +169,30 @@ function TrafficSignalModule<
   return (
     <div className="flex flex-col flex-1 items-center">
       <div className="flex gap-3 h-48 items-center">
-        {trafficSignals.map((trafficSignal, index) => {
-          return (
-            <div
-              key={index}
-              className={classNames(
-                style["signal-instance"],
-                "transition-opacity"
-              )}
-            >
-              <TrafficSignal trafficSignalInstance={trafficSignal} />
-              <button
-                className="text-gray-500 hover:text-white transition-colors mt-4"
-                onClick={() => deleteTrafficSignal(index)}
+        <AnimatePresence>
+          {trafficSignals.map((trafficSignal, index) => {
+            return (
+              <div
+                key={index}
+                className={classNames(
+                  style["signal-instance"],
+                  "transition-opacity"
+                )}
               >
-                Delete
-              </button>
-            </div>
-          );
-        })}
+                <TrafficSignal
+                  id={index}
+                  trafficSignalInstance={trafficSignal}
+                />
+                <button
+                  className="text-gray-500 hover:text-white transition-colors mt-4"
+                  onClick={() => deleteTrafficSignal(index)}
+                >
+                  Delete
+                </button>
+              </div>
+            );
+          })}
+        </AnimatePresence>
         {trafficSignals.length === 0 && (
           <p className="text-gray-500">You&apos;ve deleted all the instances</p>
         )}

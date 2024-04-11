@@ -1,15 +1,17 @@
 import { effect } from "@preact/signals";
+import cn from "classnames";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   TrafficSignal as TrafficSignalType,
   type NormalTrafficSignal,
   type SingletonTrafficSignal,
 } from "./implementation";
-import cn from "classnames";
 import style from "./traffic-signal.module.css";
 
 interface TrafficSignalProps {
   trafficSignalInstance: NormalTrafficSignal | SingletonTrafficSignal;
+  id: number;
 }
 
 function TrafficSignal(props: TrafficSignalProps) {
@@ -25,12 +27,18 @@ function TrafficSignal(props: TrafficSignalProps) {
     }
   });
 
+  console.log(props);
   return (
-    <div
+    <motion.div
+      layout
+      key={props.id}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className={cn(
         style[`current-signal-${trafficSignalInstance.trafficSignal}`],
         style["traffic-signal"],
-        "flex px-1 gap-1 items-center flex-col bg-stone-700 rounded-3xl py-3"
+        "flex px-1 gap-1 items-center flex-col rounded-3xl py-3"
       )}
     >
       <SignalLight
@@ -45,7 +53,7 @@ function TrafficSignal(props: TrafficSignalProps) {
         color="green"
         onClick={() => trafficSignalInstance.setTrafficSignal("green")}
       />
-    </div>
+    </motion.div>
   );
 }
 
@@ -57,7 +65,7 @@ interface SignalLightProps {
 function SignalLight({ color, onClick }: SignalLightProps) {
   return (
     <button
-      className={cn(style[color], "size-8 rounded-full  bg-stone-500")}
+      className={cn(style[color], "size-8 rounded-full")}
       onClick={onClick}
     ></button>
   );

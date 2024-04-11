@@ -13,8 +13,33 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "JS Design pattern visualized",
-  description: "Visualize design patterns in JavaScript",
+  description:
+    "Visualize practical implementation of design patterns in JavaScript",
   applicationName: "JS Design pattern visualized",
+  openGraph: {
+    type: "website",
+    url: "https://js-design-pattern-visualized.vercel.app",
+    siteName: "JS Design pattern visualized",
+    title: "JS Design pattern visualized",
+    images: [
+      {
+        url: "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
+        alt: "JS Design pattern visualized",
+      },
+    ],
+    description:
+      "Visualize practical implementation of design patterns in JavaScript",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JS Design pattern visualized",
+    description:
+      "Visualize practical implementation of design patterns in JavaScript",
+    creator: "@deepak_kharah",
+    images: [
+      "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
+    ],
+  },
   authors: [
     {
       name: "Deepak Kharah",
@@ -55,28 +80,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#373943" />
-      </head> */}
       <body
         className={classNames(
           inter.className,

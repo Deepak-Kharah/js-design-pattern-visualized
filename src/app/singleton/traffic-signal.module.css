@@ -1,11 +1,57 @@
+@property --lighterGradientColor {
+  syntax: "<color>";
+  initial-value: #38434e;
+  inherits: false;
+}
+
+@property --darkerGradientColor {
+  syntax: "<color>";
+  initial-value: #1e242a;
+  inherits: false;
+}
+
+.traffic-signal button {
+  background-image: linear-gradient(
+    135deg,
+    var(--lighterGradientColor),
+    var(--darkerGradientColor)
+  );
+  /* I need to specify the color again as most browser does not support Houdini */
+  --lighterGradientColor: #38434e;
+  --darkerGradientColor: #1e242a;
+
+  box-shadow: 0 0 0 0 transparent,
+    inset -0.5px -0.25px 1px 0.5px rgba(255, 255, 255, 0.02),
+    inset 1px 1px 0px 0px rgba(255, 255, 255, 0.05);
+
+  transition: --lighterGradientColor 0.5s, --darkerGradientColor 0.5s,
+    box-shadow 0.5s;
+}
+
+.traffic-signal {
+  background-color: #31363a;
+  box-shadow: inset -0.5px -0.25px 1px 0.5px rgba(255, 255, 255, 0.02),
+    inset 1px 1px 0px 0px rgba(255, 255, 255, 0.05);
+}
+
 .traffic-signal.current-signal-red button.red {
-  background-color: #e12727;
+  z-index: 2;
+  --lighterGradientColor: #ff7979;
+  --darkerGradientColor: #ff0000;
+
+  box-shadow: 0 0 23px 5px #e12727;
 }
 
 .traffic-signal.current-signal-yellow button.yellow {
-  background-color: #f9eb68;
+  z-index: 2;
+  --lighterGradientColor: #f3ff84;
+  --darkerGradientColor: #e5bb23;
+  box-shadow: 0 0 23px 5px #f9eb68;
 }
 
 .traffic-signal.current-signal-green button.green {
-  background-color: #54efbe;
+  z-index: 2;
+  --lighterGradientColor: #baffe9;
+  --darkerGradientColor: #20c691;
+  box-shadow: 0 0 23px 5px #54efbe;
 }
