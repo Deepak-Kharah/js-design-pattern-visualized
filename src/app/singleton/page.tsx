@@ -1,12 +1,13 @@
 "use client";
+import { H2 } from "@/components/Heading";
+import Paragraph from "@/components/Paragraph";
+import TitleSection from "@/components/TitleSection";
 import classNames from "classnames";
+import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import TrafficSignal from "./TrafficSignal";
 import { NormalTrafficSignal, SingletonTrafficSignal } from "./implementation";
 import style from "./page.module.css";
-import Paragraph from "@/components/Paragraph";
-import TitleSection from "@/components/TitleSection";
-import { H2 } from "@/components/Heading";
 
 function Singleton() {
   return (
@@ -168,25 +169,30 @@ function TrafficSignalModule<
   return (
     <div className="flex flex-col flex-1 items-center">
       <div className="flex gap-3 h-48 items-center">
-        {trafficSignals.map((trafficSignal, index) => {
-          return (
-            <div
-              key={index}
-              className={classNames(
-                style["signal-instance"],
-                "transition-opacity"
-              )}
-            >
-              <TrafficSignal trafficSignalInstance={trafficSignal} />
-              <button
-                className="text-gray-500 hover:text-white transition-colors mt-4"
-                onClick={() => deleteTrafficSignal(index)}
+        <AnimatePresence>
+          {trafficSignals.map((trafficSignal, index) => {
+            return (
+              <div
+                key={index}
+                className={classNames(
+                  style["signal-instance"],
+                  "transition-opacity"
+                )}
               >
-                Delete
-              </button>
-            </div>
-          );
-        })}
+                <TrafficSignal
+                  id={index}
+                  trafficSignalInstance={trafficSignal}
+                />
+                <button
+                  className="text-gray-500 hover:text-white transition-colors mt-4"
+                  onClick={() => deleteTrafficSignal(index)}
+                >
+                  Delete
+                </button>
+              </div>
+            );
+          })}
+        </AnimatePresence>
         {trafficSignals.length === 0 && (
           <p className="text-gray-500">You&apos;ve deleted all the instances</p>
         )}
