@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { H2 } from "@/components/Heading";
+import TitleSection from "@/components/TitleSection";
 import Link from "next/link";
 
 const designPatterns = [
@@ -13,18 +14,33 @@ const designPatterns = [
 export default function Home() {
   return (
     <>
-      <section className="px-7 flex flex-col justify-center items-center gap-6 sm:gap-16 h-svh">
-        <h1 className="sm:text-5xl text-3xl">Welcome to JS Design pattern</h1>
-        <p className="max-w-4xl  sm:text-lg opacity-50  font-light tracking-wide">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          atque necessitatibus quaerat rem nam. Nulla praesentium, doloribus
-          corrupti facilis ducimus nobis voluptatibus corporis nesciunt aliquam
-          perferendis, inventore ipsum assumenda molestiae.
-        </p>
-      </section>
+      <TitleSection
+        title="Welcome to JS Design pattern"
+        body={
+          <>
+            <p>
+              The{" "}
+              <strong className="font-medium underline opacity-100">
+                Design Pattern
+              </strong>{" "}
+              is a general repeatable solution to a commonly occurring problem
+              in software design. A design pattern isn&apos;t a finished design
+              that can be transformed directly into code. It is a description or
+              template for how to solve a problem that can be used in many
+              different situations.
+            </p>
+            <br />
+            <p>
+              This website is a collection of implementations of various design
+              patterns in JavaScript. You can browse through the patterns and
+              see how they work in real-time.
+            </p>
+          </>
+        }
+      />
 
       <section className="max-w-7xl mx-auto px-5 flex flex-col items-center py-16 gap-16">
-        <h2 className="text-3xl">Browse Design patterns</h2>
+        <H2>Browse Design patterns</H2>
         <ul className="flex flex-wrap gap-10 px-5 justify-center lg:mb-0 text-left">
           {designPatterns.map((pattern) => (
             <li key={pattern.name}>
@@ -35,7 +51,14 @@ export default function Home() {
               />
             </li>
           ))}
-          <DesignPatternList title="More coming soon" link="" description="" />
+          <div className="group rounded-lg border border-transparent w-80 h-32 px-5 py-4 bg-slate-700/10 transition-all hover:border-blue-900 hover:bg-blue-800/20 block">
+            <h3 className={`mb-3 text-2xl font-semibold`}>
+              More coming soon{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h3>
+          </div>
         </ul>
       </section>
     </>
@@ -46,6 +69,7 @@ interface DesignPatternListProps {
   title: string;
   link: string;
   description: string;
+  disabled?: boolean;
 }
 
 function DesignPatternList({
@@ -56,7 +80,7 @@ function DesignPatternList({
   return (
     <Link
       href={link}
-      className="group rounded-lg border border-transparent px-5 py-4 bg-slate-700/10 transition-all hover:border-blue-900 hover:bg-blue-800/20 block"
+      className="group rounded-lg border border-transparent w-80 h-32 px-5 py-4 bg-slate-700/10 transition-all hover:border-blue-900 hover:bg-blue-800/20 block"
     >
       <h3 className={`mb-3 text-2xl font-semibold`}>
         {title}{" "}
@@ -65,7 +89,7 @@ function DesignPatternList({
         </span>
       </h3>
       <p
-        className={`m-0 max-w-[30ch] text-sm font-light opacity-50 line-clamp-3 tracking-wide`}
+        className={`m-0  text-sm font-light opacity-50 line-clamp-3 tracking-wide`}
       >
         {description}
       </p>
