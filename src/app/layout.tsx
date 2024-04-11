@@ -91,14 +91,9 @@ export default function RootLayout({
                 JS Design patterns
               </Link>
             </li>
-            <li>
-              <Link className="transition-all hover:text-white" href="/about">
-                About
-              </Link>
-            </li>
           </ul>
         </nav>
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <footer className="font-extralight text-sm text-slate-400 py-4 px-3 text-center bg-gradient-to-t from-slate-700/40 to-transparent">
           Build by{" "}
           <a
