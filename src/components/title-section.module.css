@@ -1,0 +1,10 @@
+.title-section {
+  background-color: #0e1426;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #0e1426 24px
+    ),
+    repeating-linear-gradient(#121b2f55, #121b2f);
+}
