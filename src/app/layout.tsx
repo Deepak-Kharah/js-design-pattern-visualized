@@ -7,7 +7,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#373943",
   colorScheme: "dark light",
 };
 
@@ -60,16 +60,64 @@ export const metadata: Metadata = {
       {
         rel: "icon",
         type: "image/png",
-        sizes: "32x32",
-        url: "/images/favicon-32x32.png",
+        sizes: "16x16",
+        url: "/images/favicon-dark-16x16.png",
+        media: "(prefers-color-scheme: light)",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        url: "/images/favicon-16x16.png",
+        url: "/images/favicon-light-16x16.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/images/favicon-dark-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/images/favicon-light-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        sizes: "16x16",
+        url: "/images/favicon-dark.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        sizes: "16x16",
+        url: "/images/favicon-light.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        sizes: "32x32",
+        url: "/images/favicon-dark.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        sizes: "32x32",
+        url: "/images/favicon-light.svg",
+        media: "(prefers-color-scheme: dark)",
       },
     ],
+  },
+  other: {
+    "msapplication-TileColor": "#373943",
+    "msapplication-TileImage": "/images/mstile-144x144.png",
   },
 };
 
