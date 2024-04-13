@@ -27,7 +27,6 @@ function TrafficSignal(props: TrafficSignalProps) {
     }
   });
 
-  console.log(props);
   return (
     <motion.div
       layout

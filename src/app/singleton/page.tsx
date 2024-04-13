@@ -163,7 +163,12 @@ function TrafficSignalModule<
   }
 
   function resetTrafficSignals() {
-    setTrafficSignals([getInstance(), getInstance(), getInstance()]);
+    const newTrafficSignals = Array.from({ length: 3 }, () => {
+      const trafficSignal = getInstance();
+      trafficSignal.setTrafficSignal("red");
+      return trafficSignal;
+    });
+    setTrafficSignals(newTrafficSignals);
   }
 
   return (
