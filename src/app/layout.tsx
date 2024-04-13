@@ -7,7 +7,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const viewport: Viewport = {
-  themeColor: "#373943",
+  themeColor: "#0f162a",
   colorScheme: "dark light",
 };
 
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     ],
   },
   other: {
-    "msapplication-TileColor": "#373943",
+    "msapplication-TileColor": "#0f162a",
     "msapplication-TileImage": "/images/mstile-144x144.png",
   },
 };

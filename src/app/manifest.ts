@@ -18,8 +18,8 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
     ],
-    theme_color: "#373943",
-    background_color: "#373943",
+    theme_color: "#0f162a",
+    background_color: "#0f162a",
     display: "standalone",
   };
 }
