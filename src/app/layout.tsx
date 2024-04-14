@@ -41,6 +41,9 @@ export const metadata: Metadata = {
       "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
     ],
   },
+  verification: {
+    google: "RYFPGjrvpRLoYr1N9GC-k31biGi8xMt-Sas_uWwTWDs",
+  },
   authors: [
     {
       name: "Deepak Kharah",

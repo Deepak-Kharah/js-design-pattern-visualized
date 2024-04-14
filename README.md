@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Design pattern visualized
 
-## Getting Started
+This repository contains a collection of design patterns visualized in a simple and easy to understand way.
 
-First, run the development server:
+**Design Patterns** are general, repeatable solutions to commonly occurring problems in software design. A design pattern isn't a finished design that can be transformed directly into code. It is a description or template for solving a problem that can be used in many different situations.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+As software engineers, we often learn and use these design patterns to scale our applications. Many sites teach you how to use these patterns, but there are also places where you can see them in action. This project is the answer to that. It doesn't teach you how to build the pattern; instead, it helps you visualize how it works by allowing you to play around with them.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I built this site to strengthen my knowledge about design patterns and sharpen my front-end development skills by designing and developing the website from scratch. Simultaneously, I helped devs worldwide understand these patterns by visualizing them.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing to the project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+If you want to contribute to the project, you can do so by adding new design patterns or improving the existing ones. You can also help by fixing bugs or improving the website's design and performance.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We don't have a strict guideline for contributing for now, but we will soon add one.
