@@ -14,7 +14,7 @@
     "@preact/signals-react": "^2.0.1",
     "classnames": "^2.5.1",
     "framer-motion": "^11.0.28",
-    "next": "14.2.13",
+    "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18"
   },
