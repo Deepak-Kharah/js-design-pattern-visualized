@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   applicationName: "JS Design pattern visualized",
   openGraph: {
     type: "website",
-    url: "https://js-design-pattern-visualized.vercel.app",
+    url: "https://js-design-patterns.deepakkharah.com",
     siteName: "JS Design pattern visualized",
     title: "JS Design pattern visualized",
     images: [
       {
-        url: "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
+        url: "https://js-design-patterns.deepakkharah.com/images/og-image.png",
         alt: "JS Design pattern visualized",
       },
     ],
@@ -37,9 +37,7 @@ export const metadata: Metadata = {
     description:
       "Visualize practical implementation of design patterns in JavaScript",
     creator: "@deepak_kharah",
-    images: [
-      "https://js-design-pattern-visualized.vercel.app/images/og-image.png",
-    ],
+    images: ["https://js-design-patterns.deepakkharah.com/images/og-image.png"],
   },
   verification: {
     google: "RYFPGjrvpRLoYr1N9GC-k31biGi8xMt-Sas_uWwTWDs",
